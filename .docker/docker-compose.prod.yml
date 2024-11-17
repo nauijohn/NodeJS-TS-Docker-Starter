@@ -1,0 +1,15 @@
+name: nodejs-ts-docker-starter
+services:
+  api:
+    build:
+      context: ../
+      dockerfile: .docker/app/Dockerfile
+      target: prod
+    environment:
+      - IS_DOCKER=true
+      - NODE_ENV=prod
+    env_file:
+      - ../.env.dev
+    command: ["npm", "run", "start"]
+    labels:
+      - com.host.description=prod

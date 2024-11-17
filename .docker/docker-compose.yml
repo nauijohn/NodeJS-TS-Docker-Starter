@@ -1,0 +1,17 @@
+name: nodejs-ts-docker-starter
+services:
+  api:
+    container_name: nodejs-ts-docker-starter-container
+    image: nodejs-ts-docker-starter-image
+    environment:
+      - PORT=3000
+    ports:
+      - "3000:3000"
+    expose:
+      - 3000
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health-check"]
+      interval: 1m30s
+      timeout: 30s
+      retries: 5
+      start_period: 30s

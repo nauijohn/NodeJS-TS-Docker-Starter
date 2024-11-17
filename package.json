@@ -1,0 +1,27 @@
+{
+  "name": "nodejs-ts-docker-starter",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "rimraf ./dist && tsc",
+    "start": "npm run build && node dist/index.js",
+    "start:dev": "npx nodemon",
+    "start:docker-dev": "./scripts/docker.start.dev.sh",
+    "start:docker-prod": "./scripts/docker.start.prod.sh",
+    "stop:docker": "./scripts/docker.stop.sh"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "nodemon": "^3.1.7",
+    "rimraf": "^6.0.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}
